@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IT Info Hub</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">WEEKLY TECH DIGEST</p>
+      <h1>IT Info Hub</h1>
+      <p>自动收集并保留最近 7 天的 IT 资讯</p>
+    </div>
+    <button id="refresh">立即更新</button>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <span id="status">正在读取资讯…</span>
+      <select id="source"><option value="">全部来源</option></select>
+    </div>
+    <section id="articles"></section>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
