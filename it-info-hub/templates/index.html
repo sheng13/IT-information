@@ -9,18 +9,27 @@
 <body>
   <header>
     <div>
-      <p class="eyebrow">WEEKLY TECH DIGEST</p>
+      <p class="eyebrow">TECH NEWS ARCHIVE</p>
       <h1>IT Info Hub</h1>
-      <p>自动收集并保留最近 7 天的 IT 资讯</p>
+      <p>自動收集並永久保存每日 IT 資訊</p>
     </div>
     <button id="refresh">立即更新</button>
   </header>
 
   <main>
     <div class="toolbar">
-      <span id="status">正在读取资讯…</span>
-      <select id="source"><option value="">全部来源</option></select>
+      <div><strong id="status">正在讀取資訊…</strong><small id="updated"></small><small id="source-health"></small></div>
+      <div class="controls">
+        <select id="year" aria-label="年份"><option value="">全部年份</option></select>
+        <select id="month" aria-label="月份"><option value="">全部月份</option></select>
+        <select id="day" aria-label="日期"><option value="">全部日期</option></select>
+        <input id="search" type="search" placeholder="搜尋標題或摘要…" aria-label="搜尋資訊">
+        <select id="source" aria-label="資訊來源"><option value="">全部來源</option></select>
+        <select id="sort" aria-label="排序"><option value="newest">最新優先</option><option value="oldest">最舊優先</option></select>
+        <label class="toggle"><input id="favorites" type="checkbox"> 只看收藏</label>
+      </div>
     </div>
+    <section id="trending" class="trending-section"></section>
     <section id="articles"></section>
   </main>
 

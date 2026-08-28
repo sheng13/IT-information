@@ -7,18 +7,43 @@ header { padding: 70px 0 35px; display: flex; align-items: end; justify-content:
 .eyebrow { color: #5dd6c0; letter-spacing: .18em; font-weight: 800; font-size: 12px; }
 h1 { margin: 8px 0; font-size: clamp(42px, 7vw, 72px); letter-spacing: -.05em; }
 header p { color: #9db1ca; }
-button, select { border: 1px solid #2c4a6d; border-radius: 12px; background: #10243b; color: white; padding: 12px 16px; }
+button, select, input { border: 1px solid #2c4a6d; border-radius: 12px; background: #10243b; color: white; padding: 12px 16px; }
+input { min-width: 230px; }
+input::placeholder { color: #7188a4; }
 button { background: #52d0b7; color: #04130f; border: 0; font-weight: 800; cursor: pointer; }
 button:disabled { opacity: .55; }
-.toolbar { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #253951; padding: 22px 0; color: #9db1ca; }
+.toolbar { display: flex; justify-content: space-between; align-items: center; gap: 18px; border-top: 1px solid #253951; padding: 22px 0; color: #9db1ca; }
+.toolbar > div:first-child { display: grid; gap: 5px; }
+.toolbar small { color: #6f87a3; }
+.health-ok { color: #52d0b7 !important; }
+.health-error { color: #ff9e9e !important; }
+.controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.toggle { white-space: nowrap; font-size: 14px; }
+.toggle input { min-width: auto; accent-color: #52d0b7; }
 .day-group { margin: 15px 0 42px; }
+.trending-section { margin: 8px 0 34px; }
+.ranking-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 9px; }
+.ranking-item { display: flex; gap: 13px; align-items: center; padding: 13px 16px; background: rgba(16, 34, 55, .85); border: 1px solid #243d59; border-radius: 13px; }
+.ranking-item:hover { border-color: #52d0b7; }
+.ranking-item b { color: #52d0b7; width: 30px; }
+.ranking-item span { display: grid; gap: 3px; min-width: 0; }
+.ranking-item strong { overflow: hidden; text-overflow: ellipsis; }
+.ranking-item small { color: #7890aa; }
 h2 { font-size: 20px; display: flex; gap: 10px; align-items: center; }
 h2 small { color: #6f87a3; font-size: 12px; font-weight: 500; }
 .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-article { background: rgba(16, 34, 55, .85); border: 1px solid #243d59; border-radius: 18px; padding: 22px; transition: .2s ease; }
+article { overflow: hidden; background: rgba(16, 34, 55, .85); border: 1px solid #243d59; border-radius: 18px; transition: .2s ease; }
 article:hover { transform: translateY(-2px); border-color: #52d0b7; }
+.media { height: 180px; background: #10243b; overflow: hidden; }
+.media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.media.fallback { background: radial-gradient(circle at 75% 20%, #52d0b766, transparent 35%), linear-gradient(135deg, #123b68, #10243b); }
+.media.fallback::after { content: "IT"; display: grid; place-items: center; height: 100%; color: #ffffff18; font-size: 78px; font-weight: 900; }
+.card-body { padding: 20px 22px 22px; }
+.card-top { display: flex; align-items: center; justify-content: space-between; }
+.favorite { padding: 0; background: transparent; color: #ffd86b; font-size: 23px; line-height: 1; }
+.read { opacity: .68; }
 .source { color: #52d0b7; font-size: 12px; font-weight: 800; text-transform: uppercase; }
 h3 { margin: 11px 0; line-height: 1.35; }
 a { color: #f4f8ff; text-decoration: none; }
-article p { color: #9db1ca; line-height: 1.6; font-size: 14px; }
-@media (max-width: 700px) { header { align-items: start; flex-direction: column; } .grid { grid-template-columns: 1fr; } }
+article p { color: #9db1ca; line-height: 1.6; font-size: 14px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+@media (max-width: 800px) { header { padding-top: 42px; align-items: start; flex-direction: column; } .toolbar { align-items: stretch; flex-direction: column; } .controls { justify-content: stretch; } .controls > * { flex: 1; } input { min-width: 100%; } .grid, .ranking-list { grid-template-columns: 1fr; } }

@@ -1,0 +1,15 @@
+services:
+  it-info-hub:
+    build: .
+    container_name: it-info-hub
+
+    ports:
+      - "5001:5001"
+
+    volumes:
+      - it_info_data:/app/data
+
+    restart: unless-stopped
+
+volumes:
+  it_info_data:
