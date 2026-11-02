@@ -1,3 +1,9 @@
 Flask==3.1.2
 feedparser==6.0.11
 APScheduler==3.11.0
+scrapling==0.4.15
+curl-cffi==0.16.3
+playwright==1.62.0
+patchright==1.62.3
+browserforge==1.2.4
+msgspec==0.21.1

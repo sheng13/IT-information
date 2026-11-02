@@ -9,6 +9,9 @@ services:
     volumes:
       - it_info_data:/app/data
 
+    environment:
+      DB_PATH: /app/data/it_info.db
+
     restart: unless-stopped
 
 volumes:
